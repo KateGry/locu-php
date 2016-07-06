@@ -1,5 +1,5 @@
 {
-    "name": "desmondmorris/locu-php",
+    "name": "dfredriksen/locu-php",
     "type": "library",
     "description": "An un-official Locu API wrapper written in PHP",
     "keywords": ["locu"],
@@ -7,8 +7,8 @@
     "license" : "MIT",
     "authors": [
     {
-      "name": "Desmond Morris",
-      "homepage": "http://www.desmondmorris.com"
+      "name": "Daniel Fredriksen",
+      "homepage": "http://cyint.technology"
     }
   ],
   "autoload": {
