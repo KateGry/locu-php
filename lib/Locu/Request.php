@@ -93,15 +93,14 @@ class Request
      */
     public function call($resource, $params = array())
     {
-        $queryString = 'api_key=' . $this->getApiKey();
 
-        if (!empty($params) && is_array($params)) {
-          $queryString .= http_build_query($params);
-        }
+        $params['api_key'] = $this->_getApiKey();
+
+        $json = json_encode($params);
 
         $requestUrl = self::API_URL . self::API_VERSION;
 
-        $requestUrl .= '/' . $resource . '/?' . $queryString;
+        $requestUrl .= '/' . $resource;
 
         $curl = curl_init();
 
@@ -110,6 +109,8 @@ class Request
           CURLOPT_URL => $requestUrl,
           CURLOPT_TIMEOUT => 30,
           CURLOPT_HTTPHEADER => array('Accept: application/json'),
+          CURLOPT_POST => 1,
+          CURLOPT_POSTFIELDS => $json
         );
 
         curl_setopt_array($curl, $curl_options);
