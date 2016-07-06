@@ -5,6 +5,8 @@
  * API Documentation: http://dev.locu.com/documentation/
  */
 
+namespace LocuPHP;
+
 class Locu
 {
     /**

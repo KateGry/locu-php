@@ -6,6 +6,8 @@
 * for making calls to the Locu API.
 */
 
+namespace LocuPHP;
+
 class Request
 {
     /**
@@ -15,8 +17,10 @@ class Request
 
     /**
      * API Version
+     * Must be set to 'v1_0' for version 1 (deprecated)
+     * and 'V2' for version 2
      */
-    const API_VERSION = 'v1_0';
+    private $_api_version = 'v2';
 
     /**
      * API Key
@@ -43,7 +47,8 @@ class Request
         }
 
         $this->_setApiKey($config['api_key']);
-
+        if(!empty($config['api_version']))
+            $this->_setApiVersion($config['api_version']);
     }
 
     /**
@@ -56,6 +61,18 @@ class Request
     {
         $this->_api_key = $api_key;
     }
+
+    /**
+     * API Version Setter
+     *
+     * @param string  $api_version
+     * @return void
+     */
+    private function _setApiVersion($api_version)
+    {
+        $this->_api_version = $api_version;
+    }
+
 
     /**
      * API Key Getter
