@@ -3,7 +3,7 @@
     "type": "library",
     "description": "An un-official Locu API wrapper written in PHP",
     "keywords": ["locu"],
-    "homepage": "https://github.com/desmondmorris/locu-php",
+    "homepage": "https://github.com/dfredriksen/locu-php",
     "license" : "MIT",
     "authors": [
     {
